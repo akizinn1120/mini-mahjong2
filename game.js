@@ -212,7 +212,7 @@ function drawTile() {
     const dragon = document.createElement("div");
     dragon.className = "dragon-effect";
     document.body.appendChild(dragon);
-    setTimeout(() => dragon.remove(), 2000);
+    setTimeout(() => dragon.remove(), 5000);// ★5秒に変更
 
     // 枠付け（雀頭＝赤、面子1＝青、面子2＝緑）
     const winStruct = getWinningStructure(hand);
