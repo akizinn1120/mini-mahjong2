@@ -196,13 +196,13 @@ body {
   top: 50%;
   width: 0;
   height: 0;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.1); /* ★中央固定＆初期サイズ */
   background-image: url("effects/dragon.png");
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 9999;
-  animation: dragonExpand 4s ease-out forwards; /* ★ ゆっくり4秒に変更 */
+  animation: dragonExpand 5s ease-out forwards; /* ★ゆっくり5秒に延長 */
 }
 
 @keyframes dragonExpand {
@@ -210,23 +210,27 @@ body {
     width: 0;
     height: 0;
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.1); /* ★ 中央固定 */
+    transform: translate(-50%, -50%) scale(0.1);
   }
-  30% {
-    width: 50vw;
-    height: 50vw;
+  25% {
+    width: 40vw;
+    height: 40vw;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.0);
   }
+  70% {
+    width: 100vw;
+    height: 100vw;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
   100% {
-    width: 120vw;  /* ★ 画面より大きくして迫力アップ */
-    height: 120vw;
-    opacity: 0.8;  /* ★ ゆっくり薄くなる */
+    width: 140vw;   /* ★画面より大きくして迫力アップ */
+    height: 140vw;
+    opacity: 0.8;   /* ★ゆっくり薄くなる */
     transform: translate(-50%, -50%) scale(1.4);
   }
 }
-
-
 @keyframes dragonExpand {
   0% {
     width: 0;
