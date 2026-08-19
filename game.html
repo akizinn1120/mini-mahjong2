@@ -189,20 +189,20 @@ body {
     padding: 16px;             /* ★スマホは余白少なめ */
   }
 }
-/* 竜エフェクト（中央からゆっくり巨大化） */
+/* 竜エフェクト（中央から巨大化・確実に大きく見える版） */
 .dragon-effect {
   position: fixed;
   left: 50%;
   top: 50%;
   width: 0;
   height: 0;
-  transform: translate(-50%, -50%) scale(0.1); /* ★中央固定＆初期サイズ */
+  transform: translate(-50%, -50%) scale(0.1);
   background-image: url("effects/dragon.png");
-  background-size: contain;
+  background-size: cover;   /* ★ contain → cover に変更 */
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 9999;
-  animation: dragonExpand 5s ease-out forwards; /* ★ゆっくり5秒に延長 */
+  animation: dragonExpand 6s ease-out forwards; /* ★ゆっくり6秒 */
 }
 
 @keyframes dragonExpand {
@@ -213,24 +213,25 @@ body {
     transform: translate(-50%, -50%) scale(0.1);
   }
   25% {
-    width: 40vw;
-    height: 40vw;
+    width: 50vmin;   /* ★ vmin に変更（画面の短辺基準） */
+    height: 50vmin;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.0);
   }
   70% {
-    width: 100vw;
-    height: 100vw;
+    width: 120vmin;
+    height: 120vmin;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.2);
   }
   100% {
-    width: 140vw;   /* ★画面より大きくして迫力アップ */
-    height: 140vw;
-    opacity: 0.8;   /* ★ゆっくり薄くなる */
+    width: 180vmin;   /* ★ 画面より確実に大きくなる */
+    height: 180vmin;
+    opacity: 0.8;
     transform: translate(-50%, -50%) scale(1.4);
   }
 }
+
 /* スマホ縦持ち禁止画面 */
 .rotate-warning {
   position: fixed;
