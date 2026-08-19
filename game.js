@@ -350,8 +350,32 @@ function getTwoSets(tiles6) {
 /* ------------------------------------
    ボタン動作
 ------------------------------------ */
+/* ------------------------------------
+   スマホ縦持ち禁止処理
+------------------------------------ */
+function checkOrientation() {
+  const warning = document.getElementById("rotateWarning");
+  const game = document.querySelector(".game-container");
+
+  if (window.innerHeight > window.innerWidth) {
+    // 縦向き → ゲーム停止
+    warning.style.display = "flex";
+    game.style.display = "none";
+    isGameLocked = true;
+  } else {
+    // 横向き → ゲーム再開
+    warning.style.display = "none";
+    game.style.display = "block";
+    isGameLocked = false;
+  }
+}
+
+window.addEventListener("orientationchange", checkOrientation);
+window.addEventListener("resize", checkOrientation);
+
 window.onload = () => {
-  initGame();
+   checkOrientation();  
+   initGame();
   document.getElementById("drawButton").onclick = () => {
 
     if (isGameLocked) return;
