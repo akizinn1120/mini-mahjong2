@@ -39,17 +39,17 @@ function createSmallWall() {
 
   // 萬子
   for (let num = 1; num <= 9; num++) {
-    for (let i = 0; i < 4; i++) tiles.push(`${num}m`);
+    for (let i = 0; i < 3; i++) tiles.push(`${num}m`);
   }
 
   // ピンズ
   for (let num = 1; num <= 9; num++) {
-    for (let i = 0; i < 4; i++) tiles.push(`${num}p`);
+    for (let i = 0; i < 3; i++) tiles.push(`${num}p`);
   }
 
   // 字牌
   for (const honor of HONOR_LIST) {
-    for (let i = 0; i < 4; i++) tiles.push(honor);
+    for (let i = 0; i < 3; i++) tiles.push(honor);
   }
 
   // シャッフル
