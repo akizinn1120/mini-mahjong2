@@ -108,11 +108,11 @@ function render() {
   const riverDiv = document.getElementById("river");
   riverDiv.innerHTML = "";
 
-  for (let i = 0; i < river.length; i += 6) {
+  for (let i = 0; i < river.length; i += 9) {
     const row = document.createElement("div");
     row.className = "river-row";
 
-    river.slice(i, i + 6).forEach(tile => {
+    river.slice(i, i + 9).forEach(tile => {
       const img = document.createElement("img");
       img.src = `tiles/${tile}.png`;
       img.className = "tile-img";
