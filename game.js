@@ -46,12 +46,6 @@ function createSmallWall() {
   for (let num = 1; num <= 9; num++) {
     for (let i = 0; i < 3; i++) tiles.push(`${num}p`);
   }
-
-  // 字牌
-  for (const honor of HONOR_LIST) {
-    for (let i = 0; i < 3; i++) tiles.push(honor);
-  }
-
   // シャッフル
   for (let i = tiles.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
